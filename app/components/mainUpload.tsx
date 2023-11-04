@@ -21,7 +21,7 @@ const MainUpload: FC = () => {
         setIsLoading(true);
         if (items.length === 0 || query === '') return;
         // post the items to the server at /upload
-        const url = 'http://localhost:3000/upload';
+        const url = process.env.BASE_URL + '/upload';
         const response = await (await fetch(url, {
             method: 'POST',
             body: JSON.stringify({
