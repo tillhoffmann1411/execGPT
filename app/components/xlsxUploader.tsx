@@ -67,21 +67,21 @@ const XlsxUploader: FC = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center w-full max-w-5xl px-8 py-16 my-4 space-y-8 bg-white/20 rounded-lg shadow-lg dark:bg-neutral-800">
-            <h2 className="text-3xl font-semibold text-center">
+        <section id="upload" className="flex flex-col items-center justify-center max-w-5xl w-full px-8 py-16 my-4 space-y-8 rounded-lg ">
+            <h2 className="text-xl font-semibold text-center">
                 Upload your excel sheet
             </h2>
-            <p className="text-lg text-center text-neutral-500 dark:text-neutral-400">
+            <p className="text-md text-center text-neutral-500 dark:text-neutral-400">
                 Upload your excel sheet to generate analysis
             </p>
 
             {items.length === 0 && !isLoading && !analysis && (
-                <div className="mb-6 w-full">
-                    <div className="extraOutline p-4 bg-white w-max bg-whtie m-auto rounded-lg">
-                        <div className="file_upload p-5 relative border-4 border-dotted border-gray-300 rounded-lg">
-                            <svg className="text-blue-500 w-24 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" /></svg>
-                            <div className="input_field flex flex-col w-max mx-auto text-center">
-                                <label>
+                <div className="mb-6 w-full ">
+                    <div className="extraOutline p-4 m-auto rounded-lg">
+                        <label>
+                            <div className="file_upload p-5 cursor-pointer relative border-4 border-dotted border-gray-300 rounded-lg hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 transition-colors">
+                                <svg className="text-blue-500 w-24 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" /></svg>
+                                <div className="input_field flex flex-col w-max mx-auto text-center">
                                     <input
                                         className="text-sm cursor-pointer w-36 hidden"
                                         type="file"
@@ -89,11 +89,11 @@ const XlsxUploader: FC = () => {
                                         id="file"
                                     />
                                     <div className="text bg-blue-600 text-white border border-gray-300 rounded font-semibold cursor-pointer p-1 px-3 hover:bg-blue-500">Select</div>
-                                </label>
 
-                                <div className="title text-blue-500 uppercase">or drop files here</div>
+                                    <div className="title text-blue-500">or drop files here</div>
+                                </div>
                             </div>
-                        </div>
+                        </label>
                     </div>
                 </div>
             )}
@@ -188,7 +188,7 @@ const XlsxUploader: FC = () => {
                     </div>
                 </div>
             )}
-        </div>
+        </section>
     );
 };
 
