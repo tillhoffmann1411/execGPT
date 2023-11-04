@@ -1,4 +1,4 @@
-import XlsxUploader from './components/xlsxUploader';
+import MainUpload from './components/mainUpload';
 import Card from './components/card';
 import Hero from './components/hero';
 
@@ -11,7 +11,7 @@ export default function Home() {
       <Hero />
 
       <div className="px-4 pt-8 flex flex-col items-center">
-        <XlsxUploader />
+        <MainUpload />
 
         <div className="my-32 grid text-center
         lg:max-w-5xl lg:w-full lg:text-left
