@@ -44,7 +44,7 @@ const MainUpload: FC = () => {
 
     return (
         <section id="upload" className="flex flex-col items-center justify-center max-w-5xl w-full px-8 py-16 my-4 space-y-8 rounded-lg ">
-            <h2 className="text-xl font-semibold text-center">
+            <h2 className="text-xl font-semibold text-center text-gray-900 dark:text-gray-100">
                 Upload and analyze your excel sheet
             </h2>
             <p className="text-md text-center text-neutral-500 dark:text-neutral-400">

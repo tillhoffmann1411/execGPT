@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react'
+import { FC, useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import { CgDarkMode } from 'react-icons/cg';
 
 const navigation = [
     { name: 'Product', href: '#' },
@@ -11,7 +12,11 @@ const navigation = [
     { name: 'FAQ', href: '#' },
 ]
 
-const Hero = () => {
+type Props = {
+    toggleDarkMode: () => void
+}
+
+const Hero: FC<Props> = ({ toggleDarkMode }) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
@@ -21,13 +26,21 @@ const Hero = () => {
                     <div className="flex lg:flex-1">
                         <a href="#" className="-m-1.5 p-1.5">
                             <span className="sr-only">Your Company</span>
-                            <span className='text-2xl font-bold text-blue-600'>execGPT</span>
+                            <span className='text-2xl font-bold text-blue-500'>execGPT</span>
                         </a>
                     </div>
                     <div className="flex lg:hidden">
                         <button
                             type="button"
-                            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                            className="-m-2.5 mr-4 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-300"
+                            onClick={toggleDarkMode}
+                        >
+                            <span className="sr-only">Toggle dark mode</span>
+                            <CgDarkMode className="h-6 w-6" aria-hidden="true" />
+                        </button>
+                        <button
+                            type="button"
+                            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-300"
                             onClick={() => setMobileMenuOpen(true)}
                         >
                             <span className="sr-only">Open main menu</span>
@@ -36,13 +49,21 @@ const Hero = () => {
                     </div>
                     <div className="hidden lg:flex lg:gap-x-12">
                         {navigation.map((item) => (
-                            <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+                            <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100">
                                 {item.name}
                             </a>
                         ))}
                     </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                        <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                        <button
+                            type="button"
+                            className="-m-2.5 mr-4 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-300"
+                            onClick={toggleDarkMode}
+                        >
+                            <span className="sr-only">Toggle dark mode</span>
+                            <CgDarkMode className="h-6 w-6" aria-hidden="true" />
+                        </button>
+                        <a href="#" className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100">
                             Log in <span aria-hidden="true">&rarr;</span>
                         </a>
                     </div>
@@ -106,7 +127,7 @@ const Hero = () => {
                 </div>
                 <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                     <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                        <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                        <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:text-gray-400 dark:ring-gray-100/10 dark:hover:ring-gray-100/20">
                             Announcing our new features.{' '}
                             <a href="#" className="font-semibold text-blue-600">
                                 <span className="absolute inset-0" aria-hidden="true" />
@@ -115,10 +136,10 @@ const Hero = () => {
                         </div>
                     </div>
                     <div className="text-center">
-                        <h1 className="text-4xl tracking-tight text-gray-900 sm:text-6xl">
+                        <h1 className="text-4xl tracking-tight text-gray-900 sm:text-6xl dark:text-gray-100">
                             Get more insights from your excel sheet with <span className="font-bold">execGPT</span>
                         </h1>
-                        <p className="mt-6 text-lg leading-8 text-gray-600">
+                        <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-400">
                             Get an quick and easy detailed analysis of your excel sheet with execGPT. Upload your excel now!
                         </p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
@@ -128,7 +149,7 @@ const Hero = () => {
                             >
                                 Get started
                             </a>
-                            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                            <a href="#" className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100">
                                 Learn more <span aria-hidden="true">→</span>
                             </a>
                         </div>
@@ -147,7 +168,7 @@ const Hero = () => {
                     />
                 </div>
             </div>
-        </div>
+        </div >
     )
 };
 

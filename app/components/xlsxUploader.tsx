@@ -37,7 +37,7 @@ const XlsxUploader: FC<XlsxUploaderProps> = ({ onInput }) => {
         <div className="mb-6 w-full ">
             <div className="extraOutline p-4 m-auto rounded-lg">
                 <label>
-                    <div className="file_upload p-5 cursor-pointer relative border-4 border-dotted border-gray-300 rounded-lg hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 transition-colors">
+                    <div className="file_upload p-5 cursor-pointer relative border-4 border-dotted border-gray-300 rounded-lg hover:bg-gray-100 hover:dark:border-gray-500 hover:dark:bg-gray-400/20 transition-colors">
                         <svg className="text-blue-500 w-24 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" /></svg>
                         <div className="input_field flex flex-col w-max mx-auto text-center">
                             <input

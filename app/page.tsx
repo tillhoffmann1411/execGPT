@@ -1,14 +1,22 @@
+'use client';
 import MainUpload from './components/mainUpload';
 import Card from './components/card';
 import Hero from './components/hero';
+import useDarkMode from './darkMode';
 
 
 
 export default function Home() {
-  return (
-    <main className="min-h-screen bg-white">
+  const { colorTheme, setTheme } = useDarkMode();
 
-      <Hero />
+  const toggleDarkMode = () => {
+    setTheme((prev) => prev === 'dark' ? 'light' : 'dark');
+  }
+
+  return (
+    <main className={"min-h-screen bg-white dark:bg-blue-950"}>
+
+      <Hero toggleDarkMode={toggleDarkMode} />
 
       <div className="px-4 pt-8 flex flex-col items-center">
         <MainUpload />
